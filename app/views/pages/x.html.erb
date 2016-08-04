@@ -8,9 +8,16 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      <h3>Formulario</h3>
+      <p><%= flash[:notice] %></p>
+     	<form action="<%= pages_guardar_path%>" method="POST">
+			<%= hidden_field_tag :authenticity_token, 
+			form_authenticity_token %>
+			<label>Nombre:</label><input name="nombre">
+			<label>E-mail:</label><input name="mail">
+			<label>Edad:</label><input name="edad">
+			<input type="submit" value="Enviar">  
+		</form>
     </div>
     <div class="col-sm-4">
       <h3>Column 2</h3>
